@@ -1,5 +1,6 @@
 library(MASS)
 library(class)
+library("readr")
 
 vlda = function(v,formula,data,cl){
   require(MASS)
@@ -25,18 +26,18 @@ vknn = function(v,data,cl,k){
   table(wh,cl[order(grps)])
 } 
 
-data <- read.csv(file="data/HIGGSsample.csv", header=TRUE, sep=",")
+data = read_csv("data/HIGGS.csv",col_names = FALSE)
 
-lineardiscrim = lda(X_c0 ~ ., data)
+lineardiscrim = lda(X1 ~ ., data)
 pred = predict(lineardiscrim, data)
-table(data$X_c0,pred$class)
+table(data$X1,pred$class)
 
-tt = vlda(5,X_c0~.,data,data$X_c0)
+tt = vlda(5,X1~.,data,data$X1)
 
 error = sum(tt[row(tt) != col(tt)]) / sum(tt) #vlda
 print(error)
 
-tt = vknn(5,data,data$X_c0,5)
+tt = vknn(5,data,data$X1,5)
 
 error = sum(tt[row(tt) != col(tt)]) / sum(tt) #vlda
 print(error)
