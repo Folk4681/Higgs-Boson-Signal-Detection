@@ -20,7 +20,7 @@ object dataVisualizer {
 
     val newDF = df.sample(false, 0.0002)
 
-    newDF.coalesce(1).write.option("header",true).csv("data/HIGGSsample")
+    newDF.coalesce(1).write.option("header",false).csv("data/HIGGSsample")
 
     spark.close()
 
