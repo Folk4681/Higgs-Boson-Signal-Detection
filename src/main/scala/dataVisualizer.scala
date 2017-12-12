@@ -6,12 +6,12 @@ import org.apache.spark.sql.SparkSession
 object dataVisualizer {
 
   def main(args: Array[String]): Unit = {
-    LogManager.getLogger("org").setLevel(Level.OFF)
-    LogManager.getLogger("akka").setLevel(Level.OFF)
+    //LogManager.getLogger("org").setLevel(Level.OFF)
+    //LogManager.getLogger("akka").setLevel(Level.OFF)
 
     val spark = SparkSession
       .builder()
-      .appName("Spark SQL basic example")
+      .appName("Randomly Sample CSV")
       .master("local")
       .getOrCreate()
 
