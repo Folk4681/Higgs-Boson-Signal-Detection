@@ -32,6 +32,7 @@ model <- h2o.deeplearning(x,
                           hidden = c(40,50,50,50),
                           epochs = 100)
 
+h2o.performance(model)
 plot(h2o.performance(model))
 h2o.auc(model)
 

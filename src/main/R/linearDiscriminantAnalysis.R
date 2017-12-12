@@ -30,7 +30,9 @@ data = read_csv("data/HIGGSsample.csv",col_names = FALSE)
 
 lineardiscrim = lda(X1 ~ ., data)
 pred = predict(lineardiscrim, data)
-table(data$X1,pred$class)
+tt = table(data$X1,pred$class)
+error = sum(tt[row(tt) != col(tt)]) / sum(tt) #lda
+print(error)
 
 tt = vlda(5,X1~.,data,data$X1)
 
@@ -39,5 +41,5 @@ print(error)
 
 tt = vknn(5,data,data$X1,5)
 
-error = sum(tt[row(tt) != col(tt)]) / sum(tt) #vlda
+error = sum(tt[row(tt) != col(tt)]) / sum(tt) #vKNN
 print(error)
