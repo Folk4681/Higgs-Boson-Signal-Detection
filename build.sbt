@@ -1,4 +1,4 @@
-name := "LSTM-Model-for-Stock-Market-Prediction"
+name := "Higgs-Boson-Prediction-Signal-Process"
 
 version := "0.1"
 
