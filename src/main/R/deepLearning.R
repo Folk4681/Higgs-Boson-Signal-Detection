@@ -1,7 +1,7 @@
 library("h2o")
 library("readr")
 
-data = read_csv("data/HIGGS.csv",col_names = FALSE)
+data = read_csv("data/HIGGSsample.csv",col_names = FALSE)
 
 size <- floor(0.75 * nrow(data))
 set.seed(142)

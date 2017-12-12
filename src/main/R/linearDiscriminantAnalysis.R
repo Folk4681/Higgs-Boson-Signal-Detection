@@ -26,7 +26,7 @@ vknn = function(v,data,cl,k){
   table(wh,cl[order(grps)])
 } 
 
-data = read_csv("data/HIGGS.csv",col_names = FALSE)
+data = read_csv("data/HIGGSsample.csv",col_names = FALSE)
 
 lineardiscrim = lda(X1 ~ ., data)
 pred = predict(lineardiscrim, data)
