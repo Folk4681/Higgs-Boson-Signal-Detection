@@ -12,5 +12,5 @@ Dataset used: https://archive.ics.uci.edu/ml/datasets/HIGGS.
 ## ROC Curve For Fairly Unsophisticated Deep Learning Model
 ![ROC Curve](https://puu.sh/yKfQH/12d908eaf1.png)
 
-##Results for vLDA and vKNN
+## Results for vLDA and vKNN
 ![Accuracies](https://puu.sh/yLEYb/8debd4101e.png)
